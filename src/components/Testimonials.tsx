@@ -55,30 +55,29 @@ const Testimonials = () => {
 
     if (!cards || !header) return;
 
-    // Header Animation
-    gsap.fromTo(
+    // Header Animation - Usando from para garantir visibilidade final
+    gsap.from(
       header,
-      { opacity: 0, scale: 0.95, y: 30 },
       {
-        opacity: 1,
-        scale: 1,
-        y: 0,
+        opacity: 0,
+        scale: 0.95,
+        y: 30,
         duration: 1.2,
         ease: "power4.out",
         scrollTrigger: {
           trigger: header,
-          start: "top 85%",
+          start: "top 90%",
           toggleActions: "play none none reverse",
           once: true,
         },
       }
     );
 
-    // Cards "Better Emergence" Animation
-    gsap.to(cards, {
-      opacity: 1,
-      y: 0,
-      scale: 1,
+    // Cards "Better Emergence" - Usando from para estado fail-safe
+    gsap.from(cards, {
+      opacity: 0,
+      y: 60,
+      scale: 0.9,
       duration: 1.2,
       ease: "power3.out",
       stagger: {
@@ -87,7 +86,7 @@ const Testimonials = () => {
       },
       scrollTrigger: {
         trigger: ".testimonials-grid",
-        start: "top 80%",
+        start: "top 85%",
         toggleActions: "play none none reverse",
         once: true,
       },

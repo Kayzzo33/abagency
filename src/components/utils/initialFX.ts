@@ -6,9 +6,14 @@ import { smoother } from "../Navbar";
 gsap.registerPlugin(TextPlugin);
 
 export function initialFX() {
+  const startDelay = window.innerWidth <= 1024 ? 0.4 : 0;
+  
   document.body.style.overflowY = "auto";
   smoother.paused(false);
   document.getElementsByTagName("main")[0].classList.add("main-active");
+
+  gsap.registerPlugin(SplitText);
+
   gsap.to("body", {
     backgroundColor: "#0f0909",
     duration: 0.5,
@@ -32,7 +37,7 @@ export function initialFX() {
       ease: "power3.inOut",
       y: 0,
       stagger: 0.025,
-      delay: 0.3,
+      delay: 0.3 + startDelay,
     }
   );
 
@@ -51,7 +56,7 @@ export function initialFX() {
   gsap.fromTo(
     purpleA.chars,
     { y: 60, opacity: 0 },
-    { y: 0, opacity: 1, duration: 0.7, ease: "power3.out", stagger: 0.035, delay: 1.5 }
+    { y: 0, opacity: 1, duration: 0.7, ease: "power3.out", stagger: 0.035, delay: 1.5 + startDelay }
   );
 
   // Typing effect loop for "Estratégia que gera impacto"

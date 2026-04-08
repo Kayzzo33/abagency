@@ -37,21 +37,31 @@ const Work = () => {
 
     if (isMobile) {
       // Mobile: fade-in dos cards ao entrar no viewport
+      // Usamos .from() para que o estado final seja o original do CSS (visível)
       const boxes = document.querySelectorAll(".work-section-mobile .work-box");
       boxes.forEach((box) => {
-        gsap.fromTo(
+        gsap.from(
           box,
-          { opacity: 0, y: 50 },
           {
-            opacity: 1,
-            y: 0,
+            opacity: 0,
+            y: 50,
             duration: 0.8,
             ease: "power3.out",
-            scrollTrigger: { trigger: box, start: "top 85%", once: true },
+            scrollTrigger: { 
+              trigger: box, 
+              start: "top 90%", // Um pouco mais tarde para garantir visibilidade
+              once: true 
+            },
           }
         );
       });
-      return;
+
+      // Refresh extra após 1s para mobile, dando tempo para o layout assentar
+      const mobileTimer = setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 1000);
+
+      return () => clearTimeout(mobileTimer);
     }
 
     // ───────────────────────────────────────────────────────────────
