@@ -1,0 +1,659 @@
+.landing-section {
+  width: 100%;
+  max-width: var(--cMaxWidth);
+  margin: auto;
+  position: relative;
+  height: var(--vh);
+}
+
+.landing-container {
+  width: var(--cWidth);
+  margin: auto;
+  height: 100%;
+  position: relative;
+  max-width: var(--cMaxWidth);
+}
+
+.landing-circle1 {
+  top: 0%;
+  left: 0%;
+  z-index: 15;
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  background-color: #d1812b;
+  box-shadow: inset -50px 40px 50px rgba(192, 116, 10, 0.6);
+  filter: blur(60px);
+  border-radius: 50%;
+  animation: loadingCircle 5s linear infinite;
+}
+
+.nav-fade {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 130px;
+  background-image: linear-gradient(0deg,
+      transparent,
+      var(--backgroundColor) 70%);
+  pointer-events: none;
+  z-index: 12;
+  opacity: 0;
+  left: 0;
+}
+
+@keyframes loadingCircle {
+  0% {
+    transform: translate(-95%, -75%) rotateZ(0deg);
+  }
+
+  100% {
+    transform: translate(-95%, -75%) rotateZ(360deg);
+  }
+}
+
+.landing-circle2 {
+  top: 50%;
+  right: 0%;
+  transform: translate(calc(100% - 2px), -50%);
+  z-index: 9;
+  position: fixed;
+  display: none;
+  width: 300px;
+  height: 300px;
+  background-color: #0f0909;
+  box-shadow: inset -50px 40px 50px rgba(66, 39, 3, 0.6);
+  filter: blur(50px);
+  border-radius: 50%;
+  animation: loadingCircle2 5s linear infinite;
+}
+
+@keyframes loadingCircle2 {
+  100% {
+    transform: translate(calc(100% - 2px), -50%) rotate(360deg);
+  }
+}
+
+.landing-video,
+.landing-image {
+  position: absolute;
+  bottom: 0;
+  height: 95%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.landing-image img {
+  height: 100%;
+  z-index: 2;
+  position: relative;
+}
+
+.character-rim {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  z-index: 1;
+  background-color: #2e1a04;
+  transform: translate(-50%, 36%) scaleX(1.4);
+  box-shadow: inset 66px 35px 85px 0px rgba(116, 79, 0, 0.65);
+  filter: blur(50px);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 100%) scale(1.4);
+  opacity: 0;
+}
+
+.character-model {
+  height: 80%;
+  height: 80vh;
+  position: absolute;
+  max-width: 1920px;
+  max-height: 1080px;
+  transform: translateX(-50%);
+  width: 100%;
+  left: 50%;
+  z-index: 0;
+  bottom: 50px;
+  pointer-events: inherit;
+}
+
+.character-model::after {
+  content: "";
+  width: 100vw;
+  height: 250px;
+  background-image: linear-gradient(to bottom,
+      transparent,
+      var(--backgroundColor) 70%);
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9;
+  position: absolute;
+}
+
+.character-model::before {
+  content: "";
+  width: 100vw;
+  height: 700px;
+  background-color: var(--backgroundColor);
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9;
+  position: absolute;
+}
+
+.character-loaded .character-rim {
+  animation: backlight 3s forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+/* Animação da sombra/rim circular por baixo da personagem */
+@keyframes backlight {
+  0% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 0.6;
+  }
+
+  100% {
+    opacity: 0.85;
+  }
+}
+
+.character-model canvas {
+  position: relative;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.character-hover {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.landing-intro {
+  position: absolute;
+  z-index: 9;
+  top: 12%;
+  left: 0;
+}
+
+.landing-intro h2 {
+  margin: 0;
+  color: var(--accentColor);
+  font-size: 22px;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.landing-intro h1 {
+  margin: 0;
+  letter-spacing: 2px;
+  font-size: 28px;
+  line-height: 28px;
+  font-weight: 500;
+  font-family: "Geist", sans-serif;
+}
+
+/* .landing-intro h1 span {
+   font-weight: 200; 
+} */
+
+.landing-info {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  bottom: 40px;
+  top: inherit;
+  z-index: 9;
+  text-align: center;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.landing-info h3 {
+  font-size: 22px;
+  letter-spacing: 2px;
+  font-weight: 300;
+  color: var(--accentColor);
+  margin: 0;
+}
+
+.landing-info h2 {
+  margin: 0;
+  margin-top: -10px;
+  font-family: "Geist", sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 36px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  align-items: center;
+}
+
+h2.landing-info-h2 {
+  color: #ffffff;
+  font-size: 36px;
+  width: 100%;
+  margin: 0;
+  font-family: inherit;
+  font-weight: 700;
+  position: relative;
+  line-height: 1.1;
+  margin-bottom: 30px;
+}
+
+.typing-box-container {
+  margin-top: 15px;
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.typing-box {
+  position: relative;
+  border-top: 1px solid rgba(255, 107, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 107, 0, 0.2);
+  background: rgba(255, 107, 0, 0.05);
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.typing-text {
+  font-family: inherit;
+  font-size: 32px;
+  line-height: 1;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.typing-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 32px;
+  background-color: #a69000;
+  margin-left: 5px;
+  animation: blink 1s step-end infinite;
+}
+
+.typing-handle {
+  position: absolute;
+  width: 1px;
+  height: calc(100% + 20px);
+  background-color: #a69000;
+  top: -10px;
+}
+
+.typing-handle::before,
+.typing-handle::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: #837100;
+  border-radius: 50%;
+  left: -2.5px;
+}
+
+.typing-handle::before {
+  top: -3px;
+}
+
+.typing-handle::after {
+  bottom: -3px;
+}
+
+.typing-handle-left {
+  left: -1px;
+}
+
+.typing-handle-right {
+  right: -1px;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+
+/* ========================
+   TABLET (500px – 1024px)
+   ======================== */
+@media screen and (min-width: 500px) {
+  .landing-circle2 {
+    display: block;
+  }
+
+  .landing-ana-photo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 380px;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+    animation: fadeIn 2s forwards 1.5s;
+  }
+
+  .landing-ana-photo img {
+    width: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 30px rgba(65, 53, 0, 0.39));
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 0.85;
+    }
+  }
+
+  .character-model {
+    z-index: 0;
+  }
+
+  .landing-info h3 {
+    font-size: 18px;
+  }
+
+  .landing-intro h2 {
+    font-size: 18px;
+  }
+
+  .landing-intro h1 {
+    font-size: 30px;
+    line-height: 30px;
+  }
+
+  .landing-info h2 {
+    font-size: 35px;
+    line-height: 40px;
+  }
+
+  h2.landing-info-h2 {
+    font-size: 38px;
+  }
+}
+
+/* ========================
+   TABLET (768px - 1024px)
+   Sombra circular, iPhone menor, texto fixo
+   ======================== */
+@media screen and (min-width: 500px) and (max-width: 1024px) {
+
+  /* Sombra circular por baixo da personagem — esconde corte inferior */
+  .character-rim {
+    display: block !important;
+    opacity: 0;
+    animation: backlight 3s forwards 0.5s;
+    width: 320px;
+    height: 200px;
+    transform: translate(-50%, 80%) scale(1.8);
+  }
+
+  /* Remove o gradiente que causa a aparência de iPhone transparente: */
+  .character-model::after,
+  .character-model::before {
+    display: none;
+  }
+
+  /* iPhone menor no tablet para caber junto da Ana */
+  .character-model {
+    height: 65vh;
+    bottom: 10%;
+    z-index: 2;
+  }
+
+  /* Ana levemente maiorzinha para preencher o espaço */
+  .landing-ana-photo {
+    width: 380px;
+    top: 52%;
+  }
+
+  /* Texto RESULTADOS REAIS — fixo no centro, sem transform translateX */
+  .landing-info {
+    bottom: 60px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  h2.landing-info-h2 {
+    font-size: 42px;
+  }
+
+  .typing-text {
+    font-size: 22px;
+  }
+
+  .typing-cursor {
+    height: 22px;
+  }
+
+  /* Text do intro canto superior esq */
+  .landing-intro {
+    top: 10%;
+    left: 4%;
+  }
+}
+
+/* ========================
+   MOBILE (até 499px)
+   ======================== */
+@media screen and (max-width: 499px) {
+
+  /* Remove overlay transparency on mobile too */
+  .character-model::after,
+  .character-model::before {
+    display: none;
+  }
+
+  /* iPhone bem menor para caber na tela */
+  .character-model {
+    height: 80vh;
+    bottom: 10%;
+    z-index: 2;
+  }
+
+  /* Ana centralizada, menor, com absolute ativado */
+  .landing-ana-photo {
+    position: absolute;
+    width: 260px;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+    animation: fadeIn 2s forwards 1.5s;
+  }
+
+  .landing-ana-photo img {
+    width: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 30px rgba(65, 53, 0, 0.39));
+  }
+
+  /* Sombra circular para esconder corte da Ana */
+  .character-rim {
+    display: block !important;
+    background-color: #000;
+    box-shadow: inset 66px 35px 125px 50px rgba(0, 0, 0, 0.95), 0 0 50px 20px rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    animation: backlight 3s forwards 0.5s;
+    width: 260px;
+    height: 160px;
+    transform: translate(-50%, 80%) scale(1.8);
+  }
+
+  /* Intro no canto superior esquerdo — menor */
+  .landing-intro {
+    top: 8%;
+    left: 4%;
+  }
+
+  .landing-intro h2 {
+    font-size: 14px;
+  }
+
+  .landing-intro h1 {
+    font-size: 22px;
+    line-height: 22px;
+  }
+
+  /* Info inferior — fixo no centro, sem arrastar */
+  .landing-info {
+    bottom: 60px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .landing-info h3 {
+    font-size: 13px;
+    white-space: normal;
+    text-align: center;
+  }
+
+  h2.landing-info-h2 {
+    font-size: 28px;
+    line-height: 1.1;
+    white-space: nowrap;
+  }
+
+  /* Typing box — cabe na tela pequena */
+  .typing-text {
+    font-size: 14px;
+  }
+
+  .typing-cursor {
+    height: 14px;
+  }
+
+  .typing-box {
+    max-width: calc(100vw - 40px);
+    overflow: hidden;
+  }
+
+  .typing-box-container {
+    max-width: calc(100vw - 40px);
+    overflow: hidden;
+  }
+}
+
+/* ========================
+   DESKTOP ≥ 1025px
+   Texto posicionado nas laterais do iPhone
+   ======================== */
+@media screen and (min-width: 1025px) {
+  .character-model {
+    height: 100vh;
+    bottom: 0;
+    z-index: 11;
+    position: fixed;
+  }
+
+  .character-model::after,
+  .character-model::before {
+    display: none;
+  }
+
+  .landing-info {
+    bottom: auto;
+    top: 51%;
+    z-index: inherit;
+    text-align: left;
+    transform: translateY(-50%);
+    right: auto;
+    left: 66%;
+    width: auto;
+    white-space: normal;
+    pointer-events: auto;
+  }
+
+  .landing-info h2.landing-info-h2,
+  .landing-info h2 {
+    align-items: flex-start;
+  }
+
+  .landing-intro {
+    top: 50%;
+    left: auto;
+    right: 66%;
+    transform: translateY(-50%);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .landing-intro {
+    top: 50%;
+    left: auto;
+    right: 70%;
+    transform: translateY(-50%);
+  }
+
+  .landing-info {
+    bottom: auto;
+    top: 51%;
+    z-index: inherit;
+    text-align: left;
+    transform: translateY(-50%);
+    right: auto;
+    left: 70%;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .landing-intro h2 {
+    font-size: 35px;
+  }
+
+  .landing-intro h1 {
+    font-size: 60px;
+    line-height: 55px;
+  }
+
+  .landing-info h3 {
+    font-size: 35px;
+  }
+
+  .landing-info h2 {
+    font-size: 65px;
+    line-height: 62px;
+  }
+
+  h2.landing-info-h2 {
+    font-size: 75px;
+  }
+}

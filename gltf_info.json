@@ -1,0 +1,14 @@
+{
+  "meshes": [
+    "0: Object_0",
+    "1: Object_1"
+  ],
+  "materials": [
+    "0: body_mat_transparent",
+    "1: body_mat"
+  ],
+  "materialsWithMaps": [
+    "body_mat_transparent",
+    "body_mat"
+  ]
+}
