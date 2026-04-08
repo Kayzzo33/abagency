@@ -3,7 +3,7 @@ import { DRACOLoader, GLTF, GLTFLoader } from "three-stdlib";
 import { setCharTimeline, setAllTimeline } from "../../utils/GsapScroll";
 
 // Mantendo o modelo base requisitado intacto
-const iphoneModel = "/models/apple_iphone_14_pro.glb";
+const iphoneModel = "/models/iphone_final_v1.glb";
 
 
 const setCharacter = (
