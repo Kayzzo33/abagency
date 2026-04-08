@@ -2,7 +2,6 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useLoading } from "../context/LoadingProvider";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./styles/Testimonials.css";
 
 const testimonials = [
