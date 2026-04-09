@@ -9,12 +9,12 @@ import { useLoading } from "../context/LoadingProvider";
 gsap.registerPlugin(useGSAP);
 
 const projects = [
-  { name: "Gestão de Redes Sociais", category: "Social Media", tools: "Instagram, Facebook, TikTok, Canva" },
-  { name: "Identidade Visual", category: "Design", tools: "Canva, Photoshop, Figma" },
-  { name: "Edição de Vídeo", category: "Videomaker", tools: "CapCut, Premiere, After Effects" },
-  { name: "Criação de Conteúdo", category: "Marketing Digital", tools: "Canva, Copywriting, Tráfego Pago" },
-  { name: "Estética Automotiva", category: "Nicho Especializado", tools: "Social Media, Design, Vídeo" },
-  { name: "Restaurantes & Gastronomia", category: "Nicho Especializado", tools: "Social Media, Design, Fotografia" },
+  { name: "Cold Smart", category: "Identidade Visual Completa", tools: "Uniforme, Cartão, Caneta", image: "https://res.cloudinary.com/dxhlvrach/image/upload/v1775759323/Identidade_visual_COLDSMART_kdfhtr.jpg" },
+  { name: "Soares Profloors", category: "Identidade Visual", tools: "Design Institucional", image: "https://res.cloudinary.com/dxhlvrach/image/upload/v1775759322/IDENTIDADE_VISUAL_SOARES_PROfloors_cnrhay.jpg" },
+  { name: "By Nayara", category: "Identidade Visual", tools: "Branding Personalizado", image: "https://res.cloudinary.com/dxhlvrach/image/upload/v1775759403/ddf3b91b-c769-4505-8849-e2dedaa4d3f0.png" },
+  { name: "Ótica Pacheco", category: "Identidade Visual / Logo", tools: "Logo Design", image: "https://res.cloudinary.com/dxhlvrach/image/upload/v1775759322/Pacheco_dow8mf.jpg" },
+  { name: "Gold Fly", category: "Identidade Visual / Logo", tools: "Logo Design", image: "https://res.cloudinary.com/dxhlvrach/image/upload/v1775759324/GOLD_FLY_ysg2p7.png" },
+  { name: "Pinnacle", category: "Identidade Visual / Logo", tools: "Logo Design", image: "https://res.cloudinary.com/dxhlvrach/image/upload/v1775756888/0ee85378-f3aa-4421-ad0e-a5cb18cd0a02.png" },
 ];
 
 const isTabletOrMobile = () => window.innerWidth <= 1024;
@@ -145,7 +145,7 @@ const Work = () => {
                   <h4>Ferramentas</h4>
                   <p>{project.tools}</p>
                 </div>
-                <WorkImage image="/images/placeholder.webp" alt={project.name} />
+                <WorkImage image={project.image} alt={project.name} />
               </div>
             ))}
           </div>
@@ -175,7 +175,7 @@ const Work = () => {
                 <h4>Ferramentas</h4>
                 <p>{project.tools}</p>
               </div>
-              <WorkImage image="/images/placeholder.webp" alt={project.name} />
+              <WorkImage image={project.image} alt={project.name} />
             </div>
           ))}
         </div>

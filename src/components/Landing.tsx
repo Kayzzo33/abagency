@@ -17,7 +17,7 @@ const Landing = ({ children }: PropsWithChildren) => {
           <div className="landing-info">
             <h3 className="landing-h3">Transformo perfis comuns em</h3>
             <h2 className="landing-info-h2">
-              <div className="landing-h2-1">Resultados Reais</div>
+              <div className="landing-h2-1">Marcas Memoráveis</div>
             </h2>
             <div className="typing-box-container">
               <div className="typing-box">

@@ -73,24 +73,36 @@ const Testimonials = () => {
       }
     );
 
-    // Cards "Better Emergence" - Usando from para estado fail-safe
-    gsap.from(cards, {
-      opacity: 0,
-      y: 60,
-      scale: 0.9,
-      duration: 1.2,
-      ease: "power3.out",
-      stagger: {
-        amount: 0.8,
-        from: "start",
+    // Cards "Better Emergence" - Usando fromTo para garantir estado inicial e final
+    gsap.fromTo(cards, 
+      {
+        opacity: 0,
+        y: 60,
+        scale: 0.9,
       },
-      scrollTrigger: {
-        trigger: ".testimonials-grid",
-        start: "top 85%",
-        toggleActions: "play none none reverse",
-        once: true,
-      },
-    });
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 1.2,
+        ease: "power3.out",
+        stagger: {
+          amount: 0.8,
+          from: "start",
+        },
+        scrollTrigger: {
+          trigger: ".testimonials-grid",
+          start: "top 95%", // Mais sensível para disparar mais cedo
+          toggleActions: "play none none reverse",
+          once: true,
+        },
+      }
+    );
+
+    // Forçar um refresh do ScrollTrigger após um pequeno delay para garantir que o layout assentou
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 100);
   }, [isLoading]);
 
   return (

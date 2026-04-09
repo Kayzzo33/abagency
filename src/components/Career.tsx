@@ -44,7 +44,7 @@ const Career = () => {
               </div>
               <h3>AGORA</h3>
             </div>
-            <p>
+            <p translate="no">
               Aplicação de estratégias de posicionamento e gestão de redes sociais para transformar perfis comuns em marcas memoráveis.
             </p>
           </div>
