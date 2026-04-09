@@ -18,8 +18,8 @@ const Contact = () => {
             </p>
             <h4>Telefone / WhatsApp</h4>
             <p>
-              <a href="https://wa.me/5599920555510" target="_blank" data-cursor="disable">
-                +55 99 9205-5510
+              <a href="https://wa.me/5599992055510" target="_blank" data-cursor="disable">
+                +55 99 9 9205-5510
               </a>
             </p>
             <h4>Regiões</h4>
@@ -30,7 +30,7 @@ const Contact = () => {
           <div className="contact-box">
             <h4>Social</h4>
             <a
-              href="https://wa.me/5599920555510"
+              href="https://wa.me/5599992055510"
               target="_blank"
               data-cursor="disable"
               className="contact-social"
