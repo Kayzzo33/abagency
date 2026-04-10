@@ -241,21 +241,20 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  text-transform: uppercase;
   letter-spacing: 2px;
   align-items: center;
 }
 
 h2.landing-info-h2 {
   color: #ffffff;
-  font-size: 36px;
+  font-size: 32px;
   width: 100%;
   margin: 0;
   font-family: inherit;
-  font-weight: 700;
+  font-weight: 500;
   position: relative;
   line-height: 1.1;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .typing-box-container {
@@ -596,8 +595,9 @@ h2.landing-info-h2 {
     text-align: left;
     transform: translateY(-50%);
     right: auto;
-    left: 66%;
+    left: 65%;
     width: auto;
+    max-width: 450px;
     white-space: normal;
     pointer-events: auto;
   }
@@ -630,7 +630,7 @@ h2.landing-info-h2 {
     text-align: left;
     transform: translateY(-50%);
     right: auto;
-    left: 70%;
+    left: 68%;
   }
 }
 
@@ -649,11 +649,11 @@ h2.landing-info-h2 {
   }
 
   .landing-info h2 {
-    font-size: 65px;
-    line-height: 62px;
+    font-size: 48px;
+    line-height: 52px;
   }
 
   h2.landing-info-h2 {
-    font-size: 75px;
+    font-size: 55px;
   }
 }
